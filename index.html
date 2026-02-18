@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Completely Human Coaching</title>
-  <meta name="description" content="Life and leadership coaching conversations with Dan. Warm, honest, and human — for anyone feeling stuck or wanting to grow." />
+  <meta name="description" content="Life coaching conversations with Dan. Warm, honest, and human — for anyone feeling stuck or wanting to grow." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -483,7 +483,7 @@
   ============================================ -->
   <section id="hero">
     <div class="container">
-      <p class="eyebrow">Life &amp; Leadership Coaching</p>
+      <p class="eyebrow">Life Coaching</p>
       <h1>Not a guru.<br><em>Just a human</em><br>who shows up.</h1>
       <p class="subhead">
         If you're tired of polished advice from people who seem to have it all figured out,
@@ -522,7 +522,6 @@
       </p>
 
       <p>
-        I'm not yet formally certified as a coach, and I want to be upfront about that.
         What I am is someone who listens well, asks questions that matter, and genuinely
         cares about the people I sit with. If you're looking for a thinking partner —
         someone to walk alongside you rather than hand you a blueprint — I'd love to talk.
@@ -619,8 +618,9 @@
       =========================================== -->
 
       <form
+        id="contact-form"
         class="contact-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
+        action="https://formspree.io/f/mlgwlgez"
         method="POST"
       >
         <div class="form-group">
@@ -661,8 +661,56 @@
         <!-- Honeypot spam field — hidden from real users -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
-        <button type="submit" class="form-submit">Send it &rarr;</button>
+        <button type="submit" class="form-submit" id="form-submit-btn">Send it &rarr;</button>
+
+        <p id="form-status" role="status" aria-live="polite" style="display:none; font-size:0.95rem; padding:0.75rem 1rem; border-radius:4px;"></p>
       </form>
+
+      <script>
+        (function () {
+          var form = document.getElementById('contact-form');
+          var btn  = document.getElementById('form-submit-btn');
+          var status = document.getElementById('form-status');
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+            status.style.display = 'none';
+
+            fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            })
+            .then(function (res) {
+              if (res.ok) {
+                form.reset();
+                status.textContent = "Got it — I'll be in touch soon. Thanks for reaching out.";
+                status.style.background = '#f0f7f0';
+                status.style.color = '#2d5a2d';
+                status.style.border = '1px solid #b8d8b8';
+                btn.style.display = 'none';
+              } else {
+                return res.json().then(function (data) {
+                  throw new Error((data.errors || []).map(function(e){ return e.message; }).join(', ') || 'Something went wrong.');
+                });
+              }
+            })
+            .catch(function (err) {
+              status.textContent = "Something went wrong — please try again or email me directly.";
+              status.style.background = '#fdf0f0';
+              status.style.color = '#7a2020';
+              status.style.border = '1px solid #e8c0c0';
+              btn.disabled = false;
+              btn.textContent = 'Send it →';
+            })
+            .finally(function () {
+              status.style.display = 'block';
+            });
+          });
+        })();
+      </script>
 
     </div>
   </section>
