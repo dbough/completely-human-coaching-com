@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Completely Human Coaching</title>
+  <meta name="description" content="Life and leadership coaching conversations with Dan. Warm, honest, and human — for anyone feeling stuck or wanting to grow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream:    #faf7f2;
+      --warm-off: #f2ebe0;
+      --sand:     #e8dcc8;
+      --clay:     #c4956a;
+      --bark:     #8b6347;
+      --soil:     #5c3d2e;
+      --ink:      #2d1f14;
+      --muted:    #7a6655;
+      --max-w:    680px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+    ============================================ */
+    h1, h2, h3 {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+
+    p {
+      color: var(--soil);
+    }
+
+    a {
+      color: var(--bark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--clay);
+    }
+
+    /* ============================================
+       LAYOUT UTILITIES
+    ============================================ */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--sand);
+      margin: 0;
+    }
+
+    /* ============================================
+       HEADER / NAV
+    ============================================ */
+    header {
+      background-color: var(--cream);
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--sand);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .site-name {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--soil);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--bark);
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    #hero {
+      padding: 6rem 0 5rem;
+      background-color: var(--cream);
+    }
+
+    #hero .eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    #hero h1 {
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    #hero h1 em {
+      font-style: italic;
+      color: var(--bark);
+    }
+
+    #hero .subhead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--bark);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: background-color 0.2s;
+    }
+
+    .cta-button:hover {
+      background-color: var(--soil);
+      color: #fff;
+    }
+
+    /* ============================================
+       ABOUT
+    ============================================ */
+    #about {
+      background-color: var(--warm-off);
+    }
+
+    #about .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    #about h2 {
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    #about p {
+      margin-bottom: 1.25rem;
+    }
+
+    #about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       WHAT A CONVERSATION LOOKS LIKE
+    ============================================ */
+    #conversation {
+      background-color: var(--cream);
+    }
+
+    #conversation .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    #conversation h2 {
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    #conversation p {
+      margin-bottom: 1.25rem;
+    }
+
+    .conversation-list {
+      list-style: none;
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .conversation-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      color: var(--soil);
+    }
+
+    .conversation-list li::before {
+      content: '—';
+      color: var(--clay);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ============================================
+       BOOKING / CONNECT
+    ============================================ */
+    #connect {
+      background-color: var(--warm-off);
+    }
+
+    #connect .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    #connect h2 {
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    #connect .intro {
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- OPTION A: Calendly embed ---- */
+    /* To use Calendly, uncomment the block below and paste your Calendly URL
+       into the src attribute of the iframe. Then delete / comment out Option B. */
+
+    /*
+    .calendly-wrapper {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--sand);
+      min-height: 650px;
+    }
+
+    .calendly-wrapper iframe {
+      width: 100%;
+      height: 650px;
+      border: none;
+    }
+    */
+
+    /* ---- OPTION B: Contact / Intake Form (active by default) ---- */
+    /* Delete or comment out this form block if you switch to Option A above. */
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--soil);
+      letter-spacing: 0.01em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--ink);
+      background-color: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--clay);
+      box-shadow: 0 0 0 3px rgba(196, 149, 106, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .form-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: -0.5rem;
+    }
+
+    .form-submit {
+      background-color: var(--bark);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.9rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .form-submit:hover {
+      background-color: var(--soil);
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background-color: var(--soil);
+      color: var(--sand);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    footer .footer-name {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      color: var(--sand);
+      opacity: 0.75;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 520px) {
+      section {
+        padding: 3.5rem 0;
+      }
+
+      #hero {
+        padding: 4rem 0 3.5rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      .form-submit {
+        width: 100%;
+        text-align: center;
+      }
+
+      .cta-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header>
+    <div class="inner">
+      <a class="site-name" href="#hero">Completely Human Coaching</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#conversation">What to Expect</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ============================================
+       HERO
+  ============================================ -->
+  <section id="hero">
+    <div class="container">
+      <p class="eyebrow">Life &amp; Leadership Coaching</p>
+      <h1>Not a guru.<br><em>Just a human</em><br>who shows up.</h1>
+      <p class="subhead">
+        If you're tired of polished advice from people who seem to have it all figured out,
+        you might be in the right place. These are real conversations — honest, unhurried,
+        and grounded in the messy reality of being human.
+      </p>
+      <a class="cta-button" href="#connect">Start a conversation</a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- ============================================
+       ABOUT DAN
+  ============================================ -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">About Dan</p>
+      <h2>I don't have it figured out. That's kind of the point.</h2>
+
+      <p>
+        I've spent 20 years in tech and tech leadership — building teams, navigating
+        organizations, and trying to show up as a decent human being while doing it.
+        I've been the guy who looks competent on the outside and is quietly drowning on the
+        inside. I know what it's like to succeed by most measures and still feel like something
+        important is missing.
+      </p>
+
+      <p>
+        Along the way, I became a father, deepened my faith, and found myself drawn into
+        men's community work — spaces where people drop the performance and get honest.
+        I write too, badly and compulsively, because putting words to things is how I make
+        sense of them. None of this makes me an expert. It makes me someone who has done
+        a lot of hard inner work and is still very much in it.
+      </p>
+
+      <p>
+        I'm not yet formally certified as a coach, and I want to be upfront about that.
+        What I am is someone who listens well, asks questions that matter, and genuinely
+        cares about the people I sit with. If you're looking for a thinking partner —
+        someone to walk alongside you rather than hand you a blueprint — I'd love to talk.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- ============================================
+       WHAT A CONVERSATION LOOKS LIKE
+  ============================================ -->
+  <section id="conversation">
+    <div class="container">
+      <p class="section-label">What to Expect</p>
+      <h2>No agenda. No homework. Just a real conversation.</h2>
+
+      <p>
+        A session with me isn't a seminar or a performance review. It's more like sitting
+        across from someone who is genuinely curious about you — where you are, what's weighing
+        on you, what you're trying to build or figure out.
+      </p>
+
+      <ul class="conversation-list">
+        <li>We talk for about an hour, over video or phone, wherever you're comfortable.</li>
+        <li>I ask questions. You talk. I listen — actually listen, not just wait for my turn.</li>
+        <li>We might explore a specific situation you're in, or just start with what's on your mind.</li>
+        <li>I'll reflect back what I'm hearing. Sometimes that alone is clarifying.</li>
+        <li>You leave with your own thinking, not mine. I'm not here to fix you.</li>
+      </ul>
+
+      <p>
+        It doesn't matter if you're navigating a career transition, feeling disconnected,
+        trying to be a better leader, or just carrying something heavy you haven't said out loud.
+        Any of those is a good reason to reach out.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- ============================================
+       BOOKING / CONNECT
+       -----------------------------------------
+       OPTION A: Calendly embed
+       -----------------------------------------
+       To use this option:
+         1. Paste your Calendly scheduling URL into the iframe src below.
+         2. Uncomment the entire "OPTION A" block.
+         3. Delete or comment out the "OPTION B" form block further below.
+
+       Your Calendly URL looks like:
+         https://calendly.com/YOUR-USERNAME/30min
+  ============================================ -->
+  <section id="connect">
+    <div class="container">
+      <p class="section-label">Let's Connect</p>
+      <h2>Say hello. No commitment, no sales call.</h2>
+      <p class="intro">
+        If something on this page resonated, I'd genuinely like to hear from you.
+        A first conversation is free, low-key, and just a chance to meet each other.
+      </p>
+
+
+      <!-- ==========================================
+           OPTION A: Calendly embed
+           Uncomment this block and fill in your URL.
+           Delete the Option B form below if using this.
+      =========================================== -->
+
+      <!--
+      <div class="calendly-wrapper">
+        <iframe
+          src="https://calendly.com/YOUR-USERNAME/YOUR-EVENT-TYPE"
+          title="Schedule a conversation with Dan"
+          loading="lazy">
+        </iframe>
+      </div>
+      -->
+
+
+      <!-- ==========================================
+           OPTION B: Contact / Intake Form (active)
+           This sends to a form backend. You'll need to
+           wire up the action="" URL to a service like:
+             - Formspree:  https://formspree.io  (free tier available)
+             - Netlify Forms (if hosting on Netlify)
+             - EmailJS (no server needed)
+           For Formspree, replace YOUR_FORM_ID with your form ID:
+             action="https://formspree.io/f/YOUR_FORM_ID"
+           Delete this block if using Option A above.
+      =========================================== -->
+
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="What do people call you?"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Where should I write back?"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">What's on your mind?</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="No need to explain everything. Just start somewhere — what's going on, what you're looking for, or whatever feels right."
+            required
+          ></textarea>
+          <p class="form-note">There's no wrong answer here. A few sentences is plenty.</p>
+        </div>
+
+        <!-- Honeypot spam field — hidden from real users -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <button type="submit" class="form-submit">Send it &rarr;</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Completely Human Coaching</p>
+      <p>&copy; 2026 Dan Bough &mdash; CompletelyHumanCoaching.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
