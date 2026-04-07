@@ -123,6 +123,20 @@
       color: var(--soil);
       text-decoration: none;
       letter-spacing: 0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .site-logo {
+      height: 30px;
+      width: auto;
+    }
+
+    .site-name-divider {
+      width: 1px;
+      height: 1.1em;
+      background-color: var(--sand);
     }
 
     nav {
@@ -475,7 +489,11 @@
   ============================================ -->
   <header>
     <div class="inner">
-      <a class="site-name" href="#hero">Completely Human Coaching</a>
+      <a class="site-name" href="#hero">
+        <img src="logo.png" alt="" class="site-logo" />
+        <span class="site-name-divider"></span>
+        Completely Human Coaching
+      </a>
       <nav>
         <a href="#about">About</a>
         <a href="#conversation">What to Expect</a>
