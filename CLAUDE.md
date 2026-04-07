@@ -36,3 +36,5 @@ Fonts: **Lora** (serif, headings) + **Inter** (sans-serif, body) via Google Font
 ## Voice and tone
 
 Copy is warm, direct, and unpolished — "a human, not a brand." Avoid corporate, self-help, or motivational language. Dan's established voice: honest, unhurried, grounded. When editing or writing copy, match this register.
+
+The coaching practice is open to everyone — not men-specific. Keep all copy gender-neutral.
