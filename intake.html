@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intake Form — Completely Human Coaching</title>
+  <meta name="description" content="A few questions before we talk. Helps Dan show up prepared so the call can be a real conversation." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream:    #faf7f2;
+      --warm-off: #f2ebe0;
+      --sand:     #e8dcc8;
+      --clay:     #c4956a;
+      --bark:     #8b6347;
+      --soil:     #5c3d2e;
+      --ink:      #2d1f14;
+      --muted:    #7a6655;
+      --max-w:    680px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+    ============================================ */
+    h1, h2, h3 {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+
+    p {
+      color: var(--soil);
+    }
+
+    a {
+      color: var(--bark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--clay);
+    }
+
+    /* ============================================
+       LAYOUT UTILITIES
+    ============================================ */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--sand);
+      margin: 0;
+    }
+
+    /* ============================================
+       HEADER / NAV
+    ============================================ */
+    header {
+      background-color: var(--cream);
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--sand);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .site-name {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--soil);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .site-logo {
+      height: 30px;
+      width: auto;
+    }
+
+    .site-name-divider {
+      width: 1px;
+      height: 1.1em;
+      background-color: var(--sand);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--bark);
+    }
+
+    /* ============================================
+       PAGE INTRO
+    ============================================ */
+    #intake-intro {
+      padding: 4rem 0 3rem;
+      background-color: var(--cream);
+    }
+
+    #intake-intro .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    #intake-intro h2 {
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    #intake-intro .intro {
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       INTAKE FORM
+    ============================================ */
+    #intake {
+      background-color: var(--warm-off);
+      padding-top: 3.5rem;
+    }
+
+    .intake-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* Form sections */
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-bottom: 2.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .form-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .form-section-heading {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bark);
+      letter-spacing: 0.01em;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--sand);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Form groups */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--soil);
+      letter-spacing: 0.01em;
+    }
+
+    .form-group label .optional-tag {
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-left: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--ink);
+      background-color: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--clay);
+      box-shadow: 0 0 0 3px rgba(196, 149, 106, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    /* Submit area */
+    .form-submit-area {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-top: 1rem;
+    }
+
+    .form-submit {
+      background-color: var(--bark);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.9rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .form-submit:hover {
+      background-color: var(--soil);
+    }
+
+    .form-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .form-privacy-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Status message */
+    #intake-status {
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Success state */
+    #intake-confirmation {
+      display: none;
+      padding: 3rem 0 5rem;
+    }
+
+    #intake-confirmation h2 {
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    #intake-confirmation p {
+      color: var(--muted);
+    }
+
+    /* Honeypot — hidden from humans via CSS, visible to bots */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background-color: var(--soil);
+      color: var(--sand);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    footer .footer-name {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      color: var(--sand);
+      opacity: 0.75;
+    }
+
+    footer p a {
+      color: var(--sand);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    footer p a:hover {
+      opacity: 1;
+      color: var(--cream);
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 520px) {
+      section {
+        padding: 3.5rem 0;
+      }
+
+      #intake-intro {
+        padding: 3rem 0 2rem;
+      }
+
+      #intake {
+        padding-top: 2.5rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      .form-submit {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header>
+    <div class="inner">
+      <a class="site-name" href="/">
+        <img src="logo.png" alt="" class="site-logo" />
+        <span class="site-name-divider"></span>
+        Completely Human Coaching
+      </a>
+      <nav>
+        <a href="/#about">About</a>
+        <a href="/#connect">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ============================================
+       PAGE INTRO
+  ============================================ -->
+  <section id="intake-intro">
+    <div class="container">
+      <p class="section-label">Before we talk</p>
+      <h2>A few questions.</h2>
+      <p class="intro">
+        This helps me show up prepared — so our call can be a real conversation
+        from the start, not a warmup. There are no right answers. Just write
+        honestly and don't overthink it.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- ============================================
+       INTAKE FORM
+  ============================================ -->
+  <section id="intake">
+    <div class="container">
+
+      <form
+        id="intake-form"
+        class="intake-form"
+        action="https://formspree.io/f/xnjlpade"
+        method="POST"
+      >
+
+        <!-- Section: About you -->
+        <fieldset class="form-section" style="border:none; padding:0; margin:0 0 2.5rem;">
+          <legend class="form-section-heading">About you</legend>
+
+          <div class="form-group">
+            <label for="intake-name">Name</label>
+            <input
+              type="text"
+              id="intake-name"
+              name="name"
+              placeholder="What do people call you?"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="intake-email">Email</label>
+            <input
+              type="email"
+              id="intake-email"
+              name="email"
+              placeholder="Where should I write back?"
+              autocomplete="email"
+              required
+            />
+          </div>
+        </fieldset>
+
+
+        <!-- Section: What's going on -->
+        <fieldset class="form-section" style="border:none; padding:0; margin:0 0 2.5rem;">
+          <legend class="form-section-heading">What's going on</legend>
+
+          <div class="form-group">
+            <label for="intake-situation">
+              What's going on in your life right now that made you reach out?
+            </label>
+            <textarea
+              id="intake-situation"
+              name="situation"
+              placeholder="Just start somewhere — there's no wrong way to answer this."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="intake-vision">
+              What would feel different — in your life, your work, or yourself — if coaching went really well?
+            </label>
+            <textarea
+              id="intake-vision"
+              name="vision"
+              placeholder="Even a vague sense of it is fine. What would you notice first?"
+              required
+            ></textarea>
+          </div>
+        </fieldset>
+
+
+        <!-- Section: Your readiness -->
+        <fieldset class="form-section" style="border:none; padding:0; margin:0 0 2.5rem;">
+          <legend class="form-section-heading">Your readiness</legend>
+
+          <div class="form-group">
+            <label for="intake-uncertainty">
+              What feels hard or uncertain about starting something like this?
+            </label>
+            <textarea
+              id="intake-uncertainty"
+              name="uncertainty"
+              placeholder="Doubt, cost, timing, not knowing if it's right — anything counts."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="intake-prior-coaching">
+              Have you worked with a coach before? If so, what was that like?
+              <span class="optional-tag">(optional)</span>
+            </label>
+            <textarea
+              id="intake-prior-coaching"
+              name="prior_coaching"
+              placeholder="No prior experience needed — just share what you remember, if anything."
+            ></textarea>
+          </div>
+        </fieldset>
+
+
+        <!-- Section: A couple more things -->
+        <fieldset class="form-section" style="border:none; padding:0; margin:0 0 2.5rem;">
+          <legend class="form-section-heading">A couple more things</legend>
+
+          <div class="form-group">
+            <label for="intake-referral">
+              How did you hear about Completely Human Coaching?
+            </label>
+            <input
+              type="text"
+              id="intake-referral"
+              name="referral"
+              placeholder="A friend, LinkedIn, Google, Instagram…"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="intake-practical">
+              Is there anything practical — timing, budget, availability — that might affect whether coaching is a fit right now?
+              <span class="optional-tag">(optional)</span>
+            </label>
+            <textarea
+              id="intake-practical"
+              name="practical"
+              placeholder="Timing, budget, availability — whatever's relevant right now."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="intake-anything-else">
+              Is there anything else you'd want me to know before we talk?
+              <span class="optional-tag">(optional)</span>
+            </label>
+            <textarea
+              id="intake-anything-else"
+              name="anything_else"
+              placeholder="Totally open — or leave it blank."
+            ></textarea>
+          </div>
+        </fieldset>
+
+
+        <!-- Honeypot — hidden from humans via CSS class, not display:none -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="intake-gotcha">Leave this blank</label>
+          <input
+            type="text"
+            id="intake-gotcha"
+            name="_gotcha"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
+
+        <!-- Submit -->
+        <div class="form-submit-area">
+          <button type="submit" class="form-submit" id="intake-submit-btn">
+            Send my responses &rarr;
+          </button>
+          <p class="form-privacy-note">
+            Your responses come only to me. I'll read them before our call and keep them confidential.
+          </p>
+          <p id="intake-status" role="status" aria-live="polite"></p>
+        </div>
+
+      </form>
+
+
+      <!-- Success confirmation (shown after submission) -->
+      <div id="intake-confirmation">
+        <h2>You're all set.</h2>
+        <p>I'll read what you shared before our call.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Completely Human Coaching</p>
+      <p>&copy; 2026 Dan Bough &mdash; <a href="https://www.linkedin.com/in/dan-bough/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      var form        = document.getElementById('intake-form');
+      var btn         = document.getElementById('intake-submit-btn');
+      var status      = document.getElementById('intake-status');
+      var confirmation = document.getElementById('intake-confirmation');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            confirmation.style.display = 'block';
+          } else {
+            return res.json().then(function (data) {
+              throw new Error(
+                (data.errors || []).map(function (err) { return err.message; }).join(', ')
+                || 'Something went wrong.'
+              );
+            });
+          }
+        })
+        .catch(function () {
+          status.textContent = 'Something went wrong — please try again or email me directly.';
+          status.style.background = '#fdf0f0';
+          status.style.color = '#7a2020';
+          status.style.border = '1px solid #e8c0c0';
+          btn.disabled = false;
+          btn.textContent = 'Send my responses →';
+        })
+        .finally(function () {
+          if (form.style.display !== 'none') {
+            status.style.display = 'block';
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
