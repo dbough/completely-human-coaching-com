@@ -20,7 +20,7 @@
   <meta name="twitter:image" content="https://completelyhumancoaching.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================
@@ -34,7 +34,7 @@
 
     :root {
       --cream:    #faf7f2;
-      --warm-off: #f2ebe0;
+      --warm-off: #ece2d0;
       --sand:     #e8dcc8;
       --clay:     #c4956a;
       --bark:     #8b6347;
@@ -49,7 +49,7 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Instrument Sans', sans-serif;
       background-color: var(--cream);
       color: var(--ink);
       font-size: 17px;
@@ -453,7 +453,7 @@
 
     .form-group input,
     .form-group textarea {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Instrument Sans', sans-serif;
       font-size: 1rem;
       color: var(--ink);
       background-color: var(--cream);
@@ -491,7 +491,7 @@
       border: none;
       border-radius: 4px;
       padding: 0.9rem 2rem;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Instrument Sans', sans-serif;
       font-size: 0.95rem;
       font-weight: 500;
       cursor: pointer;
@@ -624,6 +624,32 @@
         text-align: center;
       }
     }
+
+    /* ============================================
+       SCROLL REVEAL
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -676,13 +702,13 @@
   ============================================ -->
   <section id="hero">
     <div class="container">
-      <h1>There's a version of your life that <em>actually fits.</em> Let's find it.</h1>
-      <p class="subhead">
+      <h1 class="reveal">There's a version of your life that <em>actually fits.</em> Let's find it.</h1>
+      <p class="subhead reveal reveal-delay-1">
         You're carrying more than you let on — and somewhere underneath it, there's a clearer
         sense of who you are and what you want. That's what we work toward.
         Honestly, imperfectly, completely human.
       </p>
-      <a class="cta-button" href="#connect">Start a conversation</a>
+      <a class="cta-button reveal reveal-delay-2" href="#connect">Start a conversation</a>
     </div>
   </section>
 
@@ -694,18 +720,18 @@
   ============================================ -->
   <section id="what-i-do">
     <div class="container">
-      <p class="section-label">How I Can Help</p>
-      <h2>I help people discover themselves and build the life they're after.</h2>
+      <p class="section-label reveal">How I Can Help</p>
+      <h2 class="reveal reveal-delay-1">I help people discover themselves and build the life they're after.</h2>
 
-      <p>
+      <p class="reveal reveal-delay-2">
         This isn't a lofty promise. The work is real and it's often uncomfortable. We go at your pace,
         sit with what's hard, and do it without pretending to be anything other than what we are — human.
         That's not a side effect. It's the whole point.
       </p>
 
-      <p>People who reach out are carrying a lot. Some of them look like:</p>
+      <p class="reveal">People who reach out are carrying a lot. Some of them look like:</p>
 
-      <ul class="who-list">
+      <ul class="who-list reveal reveal-delay-1">
         <li>People who pour themselves into caring for others — kids, aging parents, anyone who needs them</li>
         <li>Anyone in a career transition, job loss, or a toxic work environment</li>
         <li>People looking for more meaning, or feeling a little lost</li>
@@ -714,7 +740,7 @@
         <li>Anyone facing a health challenge — cancer, chronic illness, ADHD — and figuring out what life looks like now</li>
       </ul>
 
-      <p>
+      <p class="reveal reveal-delay-2">
         You don't have to fit a profile. If something here is resonating, that's enough.
       </p>
     </div>
@@ -728,12 +754,12 @@
   ============================================ -->
   <section id="the-work">
     <div class="container">
-      <p class="section-label">The Work</p>
-      <h2>What we dig into together.</h2>
+      <p class="section-label reveal">The Work</p>
+      <h2 class="reveal reveal-delay-1">What we dig into together.</h2>
 
-      <p>Every conversation is its own thing. But there are themes that come up again and again.</p>
+      <p class="reveal reveal-delay-2">Every conversation is its own thing. But there are themes that come up again and again.</p>
 
-      <ul class="work-list">
+      <ul class="work-list reveal reveal-delay-3">
         <li>Where you're fulfilled — and where you're not, and <em>why</em></li>
         <li>Your values, and how they actually show up (or don't) in your life</li>
         <li>Your inner leader: learning to live with self-authority and self-acceptance</li>
@@ -750,17 +776,17 @@
   ============================================ -->
   <section id="about">
     <div class="container">
-      <p class="section-label">About</p>
-      <h2>I coach from where I've actually been.</h2>
+      <p class="section-label reveal">About</p>
+      <h2 class="reveal reveal-delay-1">I coach from where I've actually been.</h2>
 
-      <p>
+      <p class="reveal reveal-delay-2">
         Hi, I'm <a href="https://www.linkedin.com/in/dan-bough/" target="_blank" rel="noopener">Dan Bough</a>. I started out flipping burgers and stocking shelves. Failed out of three colleges.
         Ended up in tech — 20 years building teams and navigating organizations, doing the hard
         inner work along the way. I know what it's like to succeed by most measures and still
         feel like something important is missing.
       </p>
 
-      <p>
+      <p class="reveal reveal-delay-3">
         I'm a husband, a girl dad, a cancer survivor, a person of faith, and a trained <a href="https://coactive.com/what-is-co-active/" target="_blank" rel="noopener">Co-Active</a> coach. I listen well,
         ask questions that matter, and genuinely care about the people I sit with.
         If you're looking for a thinking partner — someone to walk alongside you — we should <a href="#connect">talk</a>.
@@ -772,12 +798,12 @@
 
   <section id="connect">
     <div class="container">
-      <p class="section-label">Let's Connect</p>
-      <h2>Start with a free 30-minute call.</h2>
+      <p class="section-label reveal">Let's Connect</p>
+      <h2 class="reveal reveal-delay-1">Start with a free 30-minute call.</h2>
 
-      <p class="intro">No commitment, no agenda. Just a conversation to see if working together feels right.</p>
+      <p class="intro reveal reveal-delay-2">No commitment, no agenda. Just a conversation to see if working together feels right.</p>
 
-      <div class="connect-primary-cta">
+      <div class="connect-primary-cta reveal reveal-delay-3">
         <a class="cta-button" href="https://calendly.com/completelyhumancoaching/30-minutes" target="_blank" rel="noopener">Book a free intro call &rarr;</a>
       </div>
 
@@ -890,6 +916,39 @@
       <p>&copy; 2026 Dan Bough &mdash; <a href="https://www.linkedin.com/in/dan-bough/" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </footer>
+
+
+  <!-- Grain texture overlay -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.028;" aria-hidden="true">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain)"/>
+  </svg>
+
+  <script>
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      // Trigger hero elements immediately on load
+      window.addEventListener('load', function () {
+        document.querySelectorAll('#hero .reveal').forEach(function (el) {
+          el.classList.add('revealed');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
