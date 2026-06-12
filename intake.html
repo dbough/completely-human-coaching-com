@@ -10,161 +10,10 @@
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
 
   <style>
-    /* ============================================
-       RESET & BASE
-    ============================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --cream:    #faf7f2;
-      --warm-off: #f2ebe0;
-      --sand:     #e8dcc8;
-      --clay:     #c4956a;
-      --bark:     #8b6347;
-      --soil:     #5c3d2e;
-      --ink:      #2d1f14;
-      --muted:    #7a6655;
-      --max-w:    680px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--cream);
-      color: var(--ink);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* ============================================
-       TYPOGRAPHY
-    ============================================ */
-    h1, h2, h3 {
-      font-family: 'Lora', serif;
-      font-weight: 600;
-      line-height: 1.25;
-    }
-
-    h1 { font-size: clamp(2rem, 5vw, 3rem); }
-    h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
-
-    p {
-      color: var(--soil);
-    }
-
-    a {
-      color: var(--bark);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    a:hover {
-      color: var(--clay);
-    }
-
-    /* ============================================
-       LAYOUT UTILITIES
-    ============================================ */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    section {
-      padding: 5rem 0;
-    }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--sand);
-      margin: 0;
-    }
-
-    /* ============================================
-       HEADER / NAV
-    ============================================ */
-    header {
-      background-color: var(--cream);
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--sand);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    header .inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .site-name {
-      font-family: 'Lora', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--soil);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .site-logo {
-      height: 30px;
-      width: auto;
-    }
-
-    .site-name-divider {
-      width: 1px;
-      height: 1.1em;
-      background-color: var(--sand);
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--bark);
-    }
-
-    nav a.nav-cta {
-      color: var(--bark);
-      border: 1.5px solid var(--bark);
-      border-radius: 4px;
-      padding: 0.25rem 0.75rem;
-    }
-
-    nav a.nav-cta:hover {
-      background: var(--bark);
-      color: var(--cream);
-    }
-
     /* ============================================
        PAGE INTRO
     ============================================ */
@@ -209,7 +58,6 @@
       gap: 0;
     }
 
-    /* Form sections */
     .form-section {
       display: flex;
       flex-direction: column;
@@ -235,7 +83,6 @@
       margin-bottom: 0.25rem;
     }
 
-    /* Form groups */
     .form-group {
       display: flex;
       flex-direction: column;
@@ -258,7 +105,7 @@
 
     .form-group input,
     .form-group textarea {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Instrument Sans', sans-serif;
       font-size: 1rem;
       color: var(--ink);
       background-color: var(--cream);
@@ -284,7 +131,6 @@
       line-height: 1.6;
     }
 
-    /* Submit area */
     .form-submit-area {
       display: flex;
       flex-direction: column;
@@ -298,7 +144,7 @@
       border: none;
       border-radius: 4px;
       padding: 0.9rem 2rem;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Instrument Sans', sans-serif;
       font-size: 0.95rem;
       font-weight: 500;
       cursor: pointer;
@@ -321,7 +167,6 @@
       color: var(--muted);
     }
 
-    /* Status message */
     #intake-status {
       font-size: 0.95rem;
       padding: 0.75rem 1rem;
@@ -329,7 +174,6 @@
       display: none;
     }
 
-    /* Success state */
     #intake-confirmation {
       display: none;
       padding: 3rem 0 5rem;
@@ -356,53 +200,9 @@
     }
 
     /* ============================================
-       FOOTER
-    ============================================ */
-    footer {
-      background-color: var(--soil);
-      color: var(--sand);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      font-size: 0.88rem;
-    }
-
-    footer .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    footer .footer-name {
-      font-family: 'Lora', serif;
-      font-size: 1rem;
-      color: var(--cream);
-      margin-bottom: 0.5rem;
-    }
-
-    footer p {
-      color: var(--sand);
-      opacity: 0.75;
-    }
-
-    footer p a {
-      color: var(--sand);
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-
-    footer p a:hover {
-      opacity: 1;
-      color: var(--cream);
-    }
-
-    /* ============================================
        RESPONSIVE
     ============================================ */
     @media (max-width: 520px) {
-      section {
-        padding: 3.5rem 0;
-      }
-
       #intake-intro {
         padding: 4rem 0 3.5rem;
       }
