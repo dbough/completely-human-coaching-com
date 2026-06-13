@@ -9,13 +9,13 @@
 
 :root {
   --cream:    #faf7f2;
-  --warm-off: #ece2d0;
-  --sand:     #e8dcc8;
-  --clay:     #c4956a;
-  --bark:     #8b6347;
-  --soil:     #5c3d2e;
-  --ink:      #2d1f14;
-  --muted:    #7a6655;
+  --warm-off: #f0e8da;
+  --sand:     #ddd0bc;
+  --clay:     #b84d2c;
+  --bark:     #8f3618;
+  --soil:     #3a2820;
+  --ink:      #1c100a;
+  --muted:    #695649;
   --max-w:    680px;
 }
 
