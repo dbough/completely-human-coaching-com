@@ -4,17 +4,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Single-page static coaching website for Dan Bough at CompletelyHumanCoaching.com. No build tool, no framework, no dependencies — everything lives in `index.html`.
+Coaching website for Dan Bough at CompletelyHumanCoaching.com. Static site processed by Jekyll (GitHub Pages). No npm, no webpack — Jekyll is the only build step.
 
 ## Development
 
-Open `index.html` directly in a browser. There is no build step, dev server, or package manager.
+Pages use Jekyll layouts, so opening HTML files directly with `file://` won't work. For local preview run `jekyll serve` (requires the `github-pages` gem or `jekyll` installed). Push to GitHub Pages to see the live result.
 
 ## Architecture
 
-One file: `index.html`. All CSS is in a `<style>` block in `<head>`. All JS is an inline `<script>` block inside the connect section (handles async Formspree form submission). Sections use anchor IDs for nav: `#hero`, `#about`, `#conversation`, `#connect`.
+Pages are HTML files with YAML front matter. Shared structure lives in `_layouts/default.html`.
 
-**Contact form:** Formspree (`https://formspree.io/f/mlgwlgez`), async fetch submission with inline success/error state. A commented-out Calendly embed option exists in the CSS (labeled "Option A").
+**Shared assets:**
+- `shared.css` — design tokens, reset, typography, header, footer, scroll reveal
+- `shared.js` — nav toggle + IntersectionObserver scroll reveal
+- `_layouts/default.html` — `<head>`, header HTML, footer HTML, grain SVG, shared asset links
+
+**Per-page assets** (CSS only, page-specific styles):
+- `index.css`, `intake.css`, `schedule/style.css`, `resources/style.css`
+
+**Front matter keys** used by the layout:
+- `title`, `description` — `<title>` and meta description
+- `stylesheet` — path to page-specific CSS (e.g. `/index.css`)
+- `robots` — robots meta value (e.g. `"noindex"`, `"noindex, nofollow"`)
+- `minimal_header: true` — hides nav (logo only); used on intake page
+- `og_title`, `og_description`, `og_url`, `og_image` — OG/Twitter tags
+
+**Contact form:** Formspree (`https://formspree.io/f/mlgwlgez`), async fetch submission with inline success/error state.
 
 **Hosting:** GitHub Pages. `CNAME` contains the custom domain.
 
@@ -31,7 +46,7 @@ All colors are CSS custom properties on `:root`:
 | `--muted` | Secondary text |
 | `--sand` | Borders, dividers |
 
-Fonts: **Lora** (serif, headings) + **Inter** (sans-serif, body) via Google Fonts. Max content width: `680px` (`--max-w`).
+Fonts: **Lora** (serif, headings) + **Instrument Sans** (sans-serif, body) via Google Fonts. Max content width: `680px` (`--max-w`).
 
 ## Voice and tone
 

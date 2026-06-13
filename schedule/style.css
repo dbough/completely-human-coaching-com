@@ -1,0 +1,99 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   SCHEDULE PAGE
+============================================ */
+.page-section {
+  flex: 1;
+  padding: 5rem 0;
+}
+
+.page-section h1 {
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.page-intro {
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+.session-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.session-card {
+  background-color: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.session-info { flex: 1; min-width: 0; }
+
+.session-name {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.session-meta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.5rem;
+}
+
+.session-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.session-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--bark);
+  text-decoration: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.session-link:hover {
+  background: var(--soil);
+  color: #fff;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 640px) {
+  .session-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .session-link { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 520px) {
+  .page-section { padding: 3.5rem 0; }
+}

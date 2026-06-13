@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  {% if page.robots %}<meta name="robots" content="{{ page.robots }}" />{% endif %}
+  {% if page.og_title %}
+  <meta property="og:title" content="{{ page.og_title }}" />
+  <meta property="og:description" content="{{ page.og_description }}" />
+  <meta property="og:url" content="{{ page.og_url }}" />
+  <meta property="og:image" content="{{ page.og_image }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ page.og_title }}" />
+  <meta name="twitter:description" content="{{ page.og_description }}" />
+  <meta name="twitter:image" content="{{ page.og_image }}" />
+  {% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/shared.css" />
+  {% if page.stylesheet %}<link rel="stylesheet" href="{{ page.stylesheet }}" />{% endif %}
+</head>
+<body>
+
+  <header>
+    <div class="inner">
+      <a class="site-name" href="/">
+        <img src="/logo.png" alt="" class="site-logo" />
+        <span class="site-name-divider"></span>
+        Completely Human Coaching
+      </a>
+      {% unless page.minimal_header %}
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="/#what-i-do">Work</a>
+        <a href="/#about">About</a>
+        <a href="/schedule">Schedule</a>
+        <a href="https://danbough.substack.com/" target="_blank" rel="noopener">Writing</a>
+      </nav>
+      {% endunless %}
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Completely Human Coaching</p>
+      <p>&copy; {{ 'now' | date: '%Y' }} Dan Bough &mdash; <a href="https://www.linkedin.com/in/dan-bough/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.028;" aria-hidden="true">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain)"/>
+  </svg>
+
+  <script src="/shared.js"></script>
+
+</body>
+</html>
