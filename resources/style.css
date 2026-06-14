@@ -59,17 +59,17 @@ body {
   gap: 0.4rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--bark);
+  color: #fff;
+  background: var(--bark);
   text-decoration: none;
-  padding: 0.45rem 1rem;
-  border: 1.5px solid var(--bark);
+  padding: 0.6rem 1.25rem;
   border-radius: 4px;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s;
 }
 
 .resource-link:hover {
-  background: var(--bark);
-  color: var(--cream);
+  background: var(--soil);
+  color: #fff;
 }
 
 .resource-actions {
