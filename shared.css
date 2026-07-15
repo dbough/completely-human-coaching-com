@@ -8,14 +8,14 @@
 }
 
 :root {
-  --cream:    #faf7f2;
-  --warm-off: #f0e8da;
-  --sand:     #ddd0bc;
+  --cream:    #faf9f7;
+  --warm-off: #eeebe6;
+  --sand:     #d6d1c8;
   --clay:     #b84d2c;
   --bark:     #8f3618;
-  --soil:     #3a2820;
-  --ink:      #1c100a;
-  --muted:    #695649;
+  --soil:     #332a25;
+  --ink:      #181310;
+  --muted:    #6b655d;
   --max-w:    680px;
 }
 
