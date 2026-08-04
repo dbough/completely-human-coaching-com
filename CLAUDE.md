@@ -41,8 +41,9 @@ All colors are CSS custom properties on `:root`:
 |---|---|
 | `--cream` / `--warm-off` | Section backgrounds |
 | `--ink` / `--soil` | Headings / body text |
-| `--bark` | Links, buttons, accents |
-| `--clay` | Section labels, list markers |
+| `--bark` | Links, buttons, accents (denim navy) |
+| `--clay` | Section labels, list markers (denim navy, lighter) |
+| `--ember` | Decorative-only warm terracotta accent (divider motif, hero photo backdrop) — never used for text |
 | `--muted` | Secondary text |
 | `--sand` | Borders, dividers |
 
