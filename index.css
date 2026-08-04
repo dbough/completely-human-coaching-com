@@ -57,9 +57,9 @@
 .hero-photo-frame::before {
   content: "";
   position: absolute;
-  inset: 6% 10% 10% 4%;
+  inset: 5%;
   background: var(--warm-off);
-  border-radius: 58% 42% 56% 44% / 46% 54% 44% 56%;
+  border-radius: 50%;
   z-index: 0;
 }
 
