@@ -89,10 +89,18 @@
 }
 
 .hero-photo-title {
-  display: block;
+  display: inline-block;
   font-size: 0.85rem;
   color: var(--muted);
   margin-top: 0.15rem;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--sand);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero-photo-title:hover {
+  color: var(--bark);
+  border-color: var(--bark);
 }
 
 @media (max-width: 860px) {
