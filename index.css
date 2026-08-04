@@ -33,6 +33,88 @@
   line-height: 1.8;
 }
 
+.hero-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-photo {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.hero-photo-frame {
+  position: relative;
+}
+
+.hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6% 10% 10% 4%;
+  background: var(--warm-off);
+  border-radius: 58% 42% 56% 44% / 46% 54% 44% 56%;
+  z-index: 0;
+}
+
+.hero-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.hero-photo-caption {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-photo-name {
+  display: block;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.hero-photo-title {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--sand);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero-photo-title:hover {
+  color: var(--bark);
+  border-color: var(--bark);
+}
+
+@media (max-width: 860px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-photo {
+    max-width: 280px;
+    justify-self: center;
+  }
+}
+
 .cta-button {
   display: inline-block;
   background-color: var(--bark);
@@ -224,7 +306,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--clay);
-  box-shadow: 0 0 0 3px rgba(196, 149, 106, 0.15);
+  box-shadow: 0 0 0 3px rgba(43, 69, 98, 0.18);
 }
 
 .form-group textarea {

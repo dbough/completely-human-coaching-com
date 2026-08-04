@@ -11,8 +11,9 @@
   --cream:    #faf9f7;
   --warm-off: #eeebe6;
   --sand:     #d6d1c8;
-  --clay:     #b84d2c;
-  --bark:     #8f3618;
+  --clay:     #2b4562;
+  --bark:     #1c2f45;
+  --ember:    #b6422b;
   --soil:     #332a25;
   --ink:      #181310;
   --muted:    #6b655d;
@@ -72,8 +73,12 @@ section {
 
 .divider {
   border: none;
-  border-top: 1px solid var(--sand);
-  margin: 0;
+  width: 72px;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--bark), var(--ember));
+  opacity: 0.85;
 }
 
 .section-label {
