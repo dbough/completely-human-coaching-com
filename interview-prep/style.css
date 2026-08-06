@@ -1,0 +1,105 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   SECTION RHYTHM
+============================================ */
+#ip-hero,
+#ip-about {
+  background-color: var(--cream);
+}
+
+#ip-included,
+#ip-cta {
+  background-color: var(--warm-off);
+}
+
+#ip-hero h1,
+#ip-included h2,
+#ip-about h2,
+#ip-cta h2 {
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+#ip-hero .subhead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+#ip-hero .subhead:last-of-type {
+  margin-bottom: 2rem;
+}
+
+#ip-about p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+#ip-cta .cta-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   LISTS
+============================================ */
+.ip-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.ip-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--soil);
+}
+
+.ip-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--clay);
+}
+
+/* ============================================
+   CTA BUTTON
+============================================ */
+.cta-button {
+  display: inline-block;
+  background-color: var(--bark);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: var(--soil);
+  color: #fff;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 520px) {
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
