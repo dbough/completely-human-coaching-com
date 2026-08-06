@@ -137,6 +137,7 @@ header .inner {
 
 nav {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -301,6 +302,11 @@ footer p a:hover {
     border-bottom: 1px solid var(--sand);
     border-radius: 0;
     padding: 0.65rem 0;
+  }
+
+  nav a.nav-cta:hover {
+    background: none;
+    color: var(--bark);
   }
 }
 
