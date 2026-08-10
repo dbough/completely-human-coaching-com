@@ -1,0 +1,263 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   SECTION RHYTHM
+============================================ */
+#wte-hero,
+#wte-how-i-coach,
+#wte-tools,
+#wte-between,
+#wte-faq,
+#wte-cta {
+  background-color: var(--cream);
+}
+
+#wte-what-is,
+#wte-session,
+#wte-isnt,
+#wte-ask,
+#wte-training {
+  background-color: var(--warm-off);
+}
+
+#wte-hero h1,
+section h2 {
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+#wte-hero .subhead,
+#wte-cta .subhead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+section p {
+  max-width: 620px;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   BULLET LISTS
+============================================ */
+.wte-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0.25rem 0 0.5rem;
+  max-width: 620px;
+}
+
+.wte-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--soil);
+}
+
+.wte-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--clay);
+}
+
+/* ============================================
+   QUOTE LIST (session examples)
+============================================ */
+.wte-quotes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+}
+
+.wte-quotes li {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--bark);
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   SESSION STEPS
+============================================ */
+.wte-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  max-width: 620px;
+}
+
+.wte-steps li {
+  color: var(--soil);
+  padding-left: 1.75rem;
+  position: relative;
+  counter-increment: wte-step;
+}
+
+.wte-steps li::before {
+  content: counter(wte-step);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  background: var(--bark);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wte-steps {
+  counter-reset: wte-step;
+}
+
+.wte-steps li span {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  color: var(--ink);
+  margin-right: 0.4rem;
+}
+
+/* ============================================
+   WHAT COACHING ISN'T
+============================================ */
+.wte-isnt-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0;
+  max-width: 620px;
+}
+
+.wte-isnt-list li {
+  color: var(--soil);
+}
+
+.wte-isnt-list strong {
+  font-family: 'Lora', serif;
+  color: var(--bark);
+}
+
+/* ============================================
+   PULL STATEMENT
+============================================ */
+.wte-pull {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--bark);
+  margin-top: 1.5rem;
+  max-width: 560px;
+}
+
+/* ============================================
+   FAQ
+============================================ */
+.wte-faq-list {
+  margin-top: 0.5rem;
+  max-width: 620px;
+}
+
+.wte-faq-item {
+  border-top: 1px solid var(--sand);
+  padding: 1.1rem 0;
+}
+
+.wte-faq-item:last-child {
+  border-bottom: 1px solid var(--sand);
+}
+
+.wte-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.05rem;
+  padding-right: 1.75rem;
+  position: relative;
+}
+
+.wte-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.wte-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: -0.1em;
+  color: var(--clay);
+  font-size: 1.3rem;
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+
+.wte-faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.wte-faq-item summary:focus-visible {
+  outline: 2px solid var(--bark);
+  outline-offset: 3px;
+}
+
+.wte-faq-item p {
+  color: var(--muted);
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   CTA BUTTON
+============================================ */
+.cta-button {
+  display: inline-block;
+  background-color: var(--bark);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.cta-button:hover {
+  background-color: var(--soil);
+  color: #fff;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 520px) {
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
