@@ -36,6 +36,12 @@ section h2 {
   color: var(--muted);
   max-width: 560px;
   line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+#wte-hero .subhead:last-of-type,
+#wte-cta .subhead:last-of-type {
+  margin-bottom: 0;
 }
 
 section p {
@@ -91,51 +97,26 @@ section p:last-child {
 }
 
 /* ============================================
-   SESSION STEPS
+   SESSION PHASES
 ============================================ */
-.wte-steps {
-  list-style: none;
+.wte-phases {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1.5rem;
   margin: 1rem 0 1.5rem;
-  padding: 0;
   max-width: 620px;
 }
 
-.wte-steps li {
-  color: var(--soil);
-  padding-left: 1.75rem;
-  position: relative;
-  counter-increment: wte-step;
-}
-
-.wte-steps li::before {
-  content: counter(wte-step);
-  position: absolute;
-  left: 0;
-  top: 0.05em;
-  width: 1.15rem;
-  height: 1.15rem;
-  border-radius: 50%;
-  background: var(--bark);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wte-steps {
-  counter-reset: wte-step;
-}
-
-.wte-steps li span {
+.wte-phase-name {
   font-family: 'Lora', serif;
   font-weight: 600;
-  color: var(--ink);
-  margin-right: 0.4rem;
+  color: var(--bark);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.wte-phase .wte-list {
+  margin: 0;
 }
 
 /* ============================================
