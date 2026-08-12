@@ -239,6 +239,35 @@ footer p a:hover {
 }
 
 /* ============================================
+   CTA BUTTON
+============================================ */
+.cta-button {
+  display: inline-block;
+  background-color: var(--bark);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.cta-button:hover {
+  background-color: var(--soil);
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ============================================
    SCROLL REVEAL
 ============================================ */
 .reveal {
