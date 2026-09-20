@@ -19,7 +19,21 @@ body {
 
 .page-intro {
   color: var(--muted);
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-intro-line {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.offerings-section-heading {
+  color: var(--ink);
+  margin: 3.5rem 0 1.25rem;
+}
+
+.offerings-section-heading:first-of-type {
+  margin-top: 4rem;
 }
 
 .offering-list {
@@ -35,12 +49,12 @@ body {
   border-radius: 6px;
   padding: 1.5rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.offering-info { flex: 1; min-width: 0; }
+.offering-info { width: 100%; min-width: 0; }
 
 .offering-name {
   font-family: 'Lora', serif;
@@ -63,35 +77,195 @@ body {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.6;
+  margin-bottom: 0.25rem;
 }
 
-.offering-link {
+.offering-ideal-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.offering-ideal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.offering-ideal-list li {
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--soil);
+  line-height: 1.55;
+}
+
+.offering-ideal-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--clay);
+}
+
+.offering-link,
+.offering-request-btn {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   color: #fff;
   background: var(--bark);
+  border: none;
   text-decoration: none;
   padding: 0.6rem 1.25rem;
   border-radius: 4px;
   transition: background 0.15s;
   white-space: nowrap;
+  cursor: pointer;
 }
 
-.offering-link:hover {
+.offering-link:hover,
+.offering-request-btn:hover {
   background: var(--soil);
   color: #fff;
+}
+
+/* ============================================
+   PACKAGE REQUEST MODAL
+============================================ */
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-top: 1.25rem;
+}
+
+.request-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.request-form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--soil);
+  letter-spacing: 0.01em;
+}
+
+.request-form label .optional-tag {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-left: 0.35rem;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background-color: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+  outline: none;
+  border-color: var(--clay);
+  box-shadow: 0 0 0 3px rgba(43, 69, 98, 0.18);
+}
+
+.request-form textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-submit-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.form-submit {
+  background-color: var(--bark);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 2rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.form-submit:hover {
+  background-color: var(--soil);
+}
+
+.form-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#request-status {
+  font-size: 0.9rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 4px;
+  display: none;
+}
+
+#request-confirmation {
+  display: none;
+}
+
+#request-confirmation h2 {
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+#request-confirmation p {
+  color: var(--muted);
+}
+
+/* Honeypot — hidden from humans via CSS, visible to bots */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ============================================
    RESPONSIVE
 ============================================ */
 @media (max-width: 640px) {
-  .offering-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .offering-link { width: 100%; justify-content: center; }
+  .offering-link,
+  .offering-request-btn { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 520px) {
