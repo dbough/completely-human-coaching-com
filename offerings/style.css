@@ -273,11 +273,76 @@ body {
 }
 
 /* ============================================
+   PACKAGE COMPARISON TABLE
+============================================ */
+.offering-compare-wrap {
+  margin-top: 2rem;
+}
+
+.offering-compare {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.offering-compare th,
+.offering-compare td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--sand);
+  white-space: nowrap;
+}
+
+.offering-compare thead th {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clay);
+  background-color: var(--warm-off);
+}
+
+.offering-compare tbody th {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: normal;
+}
+
+.offering-compare tbody td {
+  color: var(--soil);
+}
+
+.offering-compare tbody tr:last-child th,
+.offering-compare tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.offering-compare-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+/* ============================================
    RESPONSIVE
 ============================================ */
 @media (max-width: 640px) {
   .offering-link,
   .offering-request-btn { width: 100%; justify-content: center; }
+
+  .offering-compare-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .offering-compare {
+    min-width: 520px;
+  }
 }
 
 @media (max-width: 520px) {

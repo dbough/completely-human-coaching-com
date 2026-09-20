@@ -127,6 +127,52 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
 
       </ul>
 
+      <div class="offering-compare-wrap reveal reveal-delay-4">
+        <table class="offering-compare">
+          <caption class="sr-only">Comparison of individual coaching packages</caption>
+          <thead>
+            <tr>
+              <th scope="col">Package</th>
+              <th scope="col">Sessions</th>
+              <th scope="col">Length</th>
+              <th scope="col">Price</th>
+              <th scope="col">Per Session</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Single Session</th>
+              <td>1</td>
+              <td>45 min</td>
+              <td>${{ site.data.pricing.single_session.price }}</td>
+              <td>${{ site.data.pricing.single_session.price }}</td>
+            </tr>
+            <tr>
+              <th scope="row">3-Session Package</th>
+              <td>3</td>
+              <td>45 min each</td>
+              <td>${{ site.data.pricing.package_3.price }}</td>
+              <td>${{ site.data.pricing.package_3.price_per_session }}</td>
+            </tr>
+            <tr>
+              <th scope="row">6-Session Package</th>
+              <td>6</td>
+              <td>45 min each</td>
+              <td>${{ site.data.pricing.package_6.price }}</td>
+              <td>${{ site.data.pricing.package_6.price_per_session }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Recurring Coaching</th>
+              <td>Up to 2 / month</td>
+              <td>45 min each</td>
+              <td>${{ site.data.pricing.recurring.price }}/month</td>
+              <td>${{ site.data.pricing.recurring.price_per_session }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="offering-compare-note">Prices shown are introductory (30% off).</p>
+      </div>
+
       <h2 class="offerings-section-heading reveal reveal-delay-3">Groups and teams</h2>
 
       <ul class="offering-list">
