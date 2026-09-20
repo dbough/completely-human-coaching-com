@@ -108,6 +108,13 @@
   border-color: var(--bark);
 }
 
+.hero-photo-subtitle {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
 @media (max-width: 860px) {
   .hero-container {
     grid-template-columns: 1fr;
