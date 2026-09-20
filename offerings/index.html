@@ -105,6 +105,22 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
           </div>
         </li>
 
+        <li class="reveal reveal-delay-4">
+          <div class="offering-card">
+            <div class="offering-info">
+              <p class="offering-meta">Custom</p>
+              <p class="offering-name">Looking for Something Different?</p>
+              <p class="offering-desc">If none of these quite fit, let's figure out something that does. Tell me what you're looking for and we'll go from there.</p>
+              <p class="offering-ideal-label">Ideal for</p>
+              <ul class="offering-ideal-list">
+                <li>People with a specific situation or timeline that doesn't match a standard package</li>
+                <li>Anyone who wants to talk through options before committing to anything</li>
+              </ul>
+            </div>
+            <button type="button" class="offering-link offering-request-btn" data-package="Custom">Request something custom</button>
+          </div>
+        </li>
+
       </ul>
 
       <h2 class="offerings-section-heading reveal reveal-delay-3">Groups and teams</h2>
@@ -141,7 +157,7 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       <div id="request-form-wrap">
         <h2 id="request-modal-title">Request this</h2>
 
-        <form id="request-form" class="request-form" action="FORMSPREE_ENDPOINT" method="POST">
+        <form id="request-form" class="request-form" action="https://formspree.io/f/mjykyype" method="POST">
           <div class="form-group">
             <label for="request-name">Name</label>
             <input type="text" id="request-name" name="name" placeholder="Your name" autocomplete="name" required />
@@ -159,6 +175,7 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
               <option value="3-Session Package">3-Session Package</option>
               <option value="6-Session Package">6-Session Package</option>
               <option value="Recurring Coaching">Recurring Coaching</option>
+              <option value="Custom">Custom</option>
             </select>
           </div>
 
@@ -206,11 +223,6 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       var btn              = document.getElementById('request-submit-btn');
       var status           = document.getElementById('request-status');
       var lastTrigger;
-
-      // FORMSPREE_ENDPOINT is a placeholder — replace with the real Formspree
-      // endpoint URL for this form before going live.
-      var FORMSPREE_ENDPOINT = 'FORMSPREE_ENDPOINT';
-      form.action = FORMSPREE_ENDPOINT;
 
       function openModal(pkg, trigger) {
         lastTrigger = trigger;
