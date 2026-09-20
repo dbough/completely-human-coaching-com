@@ -6,9 +6,9 @@ package_3:
   price: "280"
   price_per_session: "93.33"
 package_6:
-  retail: "725"
-  price: "507.50"
-  price_per_session: "84.58"
+  retail: "720"
+  price: "504"
+  price_per_session: "84"
 recurring:
   retail: "230"
   price: "161"
