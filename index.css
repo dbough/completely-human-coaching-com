@@ -19,17 +19,10 @@
   color: var(--ink);
   margin-bottom: 1.5rem;
   font-size: clamp(1.7rem, 4.2vw, 2.6rem);
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-}
-
-#hero h1 .hero-line {
-  display: block;
 }
 
 #hero h1 em {
-  font-style: normal;
+  font-style: italic;
   color: var(--bark);
 }
 
