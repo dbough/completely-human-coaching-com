@@ -1,0 +1,15 @@
+single_session:
+  retail: 150
+  price: 125
+package_3:
+  retail: 400
+  price: 350
+package_6:
+  retail: 690
+  price: 600
+recurring:
+  retail: 200
+  price: 175
+workshop:
+  retail: 1500
+  price: 500
