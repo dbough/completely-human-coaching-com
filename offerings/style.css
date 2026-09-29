@@ -283,3 +283,7 @@ body {
 @media (max-width: 520px) {
   .page-section { padding: 3.5rem 0; }
 }
+
+#something-different {
+  scroll-margin-top: 6rem;
+}
