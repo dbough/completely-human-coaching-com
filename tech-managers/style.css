@@ -1,0 +1,731 @@
+/* ============================================
+   SECTION TITLES
+   .section-label is the big section title; the h2 under it is a
+   lighter supporting line.
+============================================ */
+.section-label {
+  display: block;
+  font-family: 'Lora', serif;
+  font-size: clamp(2.1rem, 5.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+}
+
+.section-label::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin-top: 0.7rem;
+  border-radius: 3px;
+  background: var(--ember);
+}
+
+section:not(#hero) h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--soil);
+  margin-bottom: 1.75rem;
+}
+
+/* ============================================
+   HERO
+============================================ */
+#hero {
+  padding: 3.5rem 0 4.5rem;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(182, 66, 43, 0.22), transparent 45%),
+    var(--bark);
+  color: var(--cream);
+}
+
+.hero-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  align-self: start;
+  container-type: inline-size;
+}
+
+#hero h1 {
+  color: #fff;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  /* Scale with the text column so the longest rotating title always fits on one line */
+  font-size: min(3.8rem, 8.6cqw);
+  line-height: 1.1;
+  margin-bottom: 2.25rem;
+}
+
+#hero h1 .h1-top {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.2;
+  margin-bottom: 0.2em;
+}
+
+#hero h1 .hl {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0.12em 0 0 -0.28em;
+  padding: 0.02em 0.28em 0.08em;
+  background-color: var(--cream);
+  color: var(--bark);
+  border-radius: 6px;
+}
+
+.hl-text {
+  display: inline-block;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hl-text.is-out {
+  opacity: 0;
+  transform: translateY(0.25em);
+}
+
+#hero .subhead {
+  color: var(--sand);
+  font-size: 1.4rem;
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.5rem;
+}
+
+.hero-actions .cta-button {
+  margin-top: 0;
+}
+
+.cta-light {
+  background-color: var(--cream);
+  color: var(--bark);
+  font-weight: 600;
+}
+
+.cta-light:hover {
+  background-color: #fff;
+  color: var(--bark);
+}
+
+.hero-secondary {
+  color: var(--cream);
+  font-size: 0.95rem;
+}
+
+.hero-secondary:hover {
+  color: #fff;
+}
+
+.hero-photo {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.hero-photo-frame {
+  position: relative;
+}
+
+.hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 4%;
+  background: var(--cream);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.hero-photo-caption {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-photo-name {
+  display: block;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.hero-photo-title {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--sand);
+  margin-top: 0.15rem;
+}
+
+.hero-photo-namerow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-linkedin {
+  display: inline-flex;
+  color: var(--sand);
+  transition: color 0.2s;
+}
+
+.hero-linkedin:hover {
+  color: #fff;
+}
+
+/* Three separate outcome cards */
+.pillars {
+  max-width: 1080px;
+  margin: 3.5rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.pillar {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 4px solid var(--ember);
+  border-radius: 6px;
+  padding: 1.5rem 1.5rem 1.6rem;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.pillar:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.pillar-icon {
+  display: block;
+  color: var(--sand);
+  margin-bottom: 0.9rem;
+}
+
+#hero .pillar h2 {
+  color: #fff;
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.pillar p {
+  color: var(--sand);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* ============================================
+   WHO THIS IS FOR
+============================================ */
+#who {
+  background-color: var(--cream);
+}
+
+.role-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+}
+
+.role-chips li {
+  background: var(--bark);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+}
+
+.who-lead {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.trigger-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+.trigger-grid li {
+  background: var(--warm-off);
+  border-left: 4px solid var(--bark);
+  border-radius: 4px;
+  padding: 1rem 1.15rem;
+  color: var(--soil);
+  line-height: 1.5;
+}
+
+.trigger-grid li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* ============================================
+   WHAT I HELP WITH
+============================================ */
+#problem {
+  background-color: var(--warm-off);
+}
+
+.problem-row {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--sand);
+}
+
+.problem-quote {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.4rem, 3.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.problem-detail {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.problem-close {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--sand);
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--bark);
+}
+
+/* ============================================
+   CHECK LISTS
+============================================ */
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 2.5rem;
+  color: var(--soil);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--bark);
+}
+
+.check-list li::after {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 0.37rem;
+  width: 0.35rem;
+  height: 0.7rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.check-list-compact li {
+  font-size: 0.98rem;
+}
+
+/* Same icon size as the main list; nudge up to center on the smaller first line */
+.check-list-compact li::before {
+  top: -0.04rem;
+}
+
+.check-list-compact li::after {
+  top: 0.23rem;
+}
+
+/* ============================================
+   OFFER
+============================================ */
+#offer {
+  background-color: var(--bark);
+}
+
+#offer .section-label {
+  color: #fff;
+}
+
+section#offer h2 {
+  color: var(--sand);
+}
+
+.offering-card {
+  background-color: var(--cream);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.offering-facts {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 0;
+  border-top: 3px solid var(--bark);
+  border-bottom: 1px solid var(--sand);
+}
+
+.offering-facts li {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.offering-facts li + li {
+  border-left: 1px solid var(--sand);
+}
+
+.fact-num {
+  display: block;
+  font-family: 'Lora', serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--bark);
+}
+
+.fact-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--soil);
+}
+
+.offering-name {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.offering-card .price-current {
+  font-size: 2.2rem;
+}
+
+.offering-card .price-retail {
+  font-size: 1.15rem;
+}
+
+.offering-per-session {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.offering-ideal-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.offer-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.offer-why {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  background-color: var(--warm-off);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ============================================
+   ABOUT
+============================================ */
+#about {
+  background-color: var(--cream);
+}
+
+#about p {
+  margin-bottom: 1.25rem;
+}
+
+#about p:last-child {
+  margin-bottom: 0;
+}
+
+.underline-accent {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ember);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+  text-decoration-skip-ink: none;
+}
+
+.pull-quote {
+  margin: 2rem 0;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.35;
+  color: var(--bark);
+}
+
+/* ============================================
+   CONNECT + FORM
+============================================ */
+#connect {
+  background-color: var(--warm-off);
+}
+
+#connect .intro {
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+}
+
+.connect-primary-cta {
+  margin-bottom: 3rem;
+}
+
+.form-separator {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-separator::before,
+.form-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--soil);
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background-color: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--clay);
+  box-shadow: 0 0 0 3px rgba(43, 69, 98, 0.18);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-submit {
+  background-color: var(--bark);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.9rem 2rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.form-submit:hover {
+  background-color: var(--soil);
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-status {
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+}
+
+.form-status.is-success {
+  background: #f0f7f0;
+  color: #2d5a2d;
+  border: 1px solid #b8d8b8;
+}
+
+.form-status.is-error {
+  background: #fdf0f0;
+  color: #7a2020;
+  border: 1px solid #e8c0c0;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 860px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Stacked layout: center the hero text over the photo */
+  .hero-text {
+    text-align: center;
+  }
+
+  #hero h1 .hl {
+    margin-left: 0;
+  }
+
+  #hero .subhead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-photo {
+    max-width: 260px;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .trigger-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .fact-num {
+    font-size: 2.1rem;
+  }
+
+  .fact-label {
+    font-size: 0.82rem;
+  }
+
+  #hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .form-submit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .offering-card {
+    padding: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar {
+    transition: none;
+  }
+
+  .pillar:hover {
+    transform: none;
+  }
+}

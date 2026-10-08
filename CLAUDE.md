@@ -27,6 +27,7 @@ Pages are HTML files with YAML front matter. Shared structure lives in `_layouts
 - `stylesheet` — path to page-specific CSS (e.g. `/index.css`)
 - `robots` — robots meta value (e.g. `"noindex"`, `"noindex, nofollow"`)
 - `minimal_header: true` — hides nav (logo only); used on intake page
+- `landing: true` — single-page mode: hides nav, makes the logo a non-link, and trims the footer to the copyright line so nothing leads off the page; used on `/tech-managers/`
 - `og_title`, `og_description`, `og_url`, `og_image` — OG/Twitter tags
 
 **Contact form:** Formspree (`https://formspree.io/f/mlgwlgez`), async fetch submission with inline success/error state.

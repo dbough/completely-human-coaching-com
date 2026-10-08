@@ -40,12 +40,12 @@
 
   <header>
     <div class="inner">
-      <a class="site-name" href="/">
+      {% if page.landing %}<span class="site-name">{% else %}<a class="site-name" href="/">{% endif %}
         <img src="/logo.png" alt="" class="site-logo" />
         <span class="site-name-divider"></span>
         Completely Human Coaching
-      </a>
-      {% unless page.minimal_header %}
+      {% if page.landing %}</span>{% else %}</a>{% endif %}
+      {% unless page.minimal_header or page.landing %}
       <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
         <span></span>
         <span></span>
@@ -66,8 +66,12 @@
   <footer>
     <div class="footer-inner">
       <p class="footer-name">Completely Human Coaching</p>
+      {% if page.landing %}
+      <p>&copy; {{ 'now' | date: '%Y' }} Dan Bough</p>
+      {% else %}
       <p>&copy; {{ 'now' | date: '%Y' }} Dan Bough &mdash; <a href="https://www.linkedin.com/in/dan-bough/" target="_blank" rel="noopener">LinkedIn</a></p>
       <p class="footer-consulting">I also do tech consulting. More at <a href="https://danbough.com" target="_blank" rel="noopener">danbough.com</a>.</p>
+      {% endif %}
     </div>
   </footer>
 
