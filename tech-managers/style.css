@@ -4,7 +4,7 @@
    lighter supporting line.
 ============================================ */
 .section-label {
-  display: inline-block;
+  display: block;
   font-family: 'Lora', serif;
   font-size: clamp(2.1rem, 5.5vw, 3rem);
   font-weight: 600;
