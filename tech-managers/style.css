@@ -195,14 +195,6 @@ section h2 {
   background: rgba(255, 255, 255, 0.11);
 }
 
-.pillar-num {
-  display: block;
-  font-family: 'Lora', serif;
-  font-size: 0.95rem;
-  color: var(--sand);
-  margin-bottom: 0.5rem;
-}
-
 #hero .pillar h2 {
   color: #fff;
   font-size: 1.45rem;
