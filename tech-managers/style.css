@@ -421,19 +421,37 @@ section#offer h2 {
 
 .offering-facts {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 0;
+  border-top: 3px solid var(--bark);
+  border-bottom: 1px solid var(--sand);
 }
 
 .offering-facts li {
-  background: var(--bark);
-  color: #fff;
-  font-size: 1.05rem;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.offering-facts li + li {
+  border-left: 1px solid var(--sand);
+}
+
+.fact-num {
+  display: block;
+  font-family: 'Lora', serif;
+  font-size: 2.6rem;
   font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  line-height: 1.1;
+  color: var(--bark);
+}
+
+.fact-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--soil);
 }
 
 .offering-name {
@@ -673,6 +691,14 @@ section#offer h2 {
 }
 
 @media (max-width: 520px) {
+  .fact-num {
+    font-size: 2.1rem;
+  }
+
+  .fact-label {
+    font-size: 0.82rem;
+  }
+
   #hero {
     padding: 3.5rem 0 3rem;
   }
