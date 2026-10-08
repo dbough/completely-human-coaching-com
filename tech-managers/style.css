@@ -145,6 +145,18 @@ section h2 {
   margin-top: 0.15rem;
 }
 
+.hero-linkedin {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  color: var(--sand);
+  transition: color 0.2s;
+}
+
+.hero-linkedin:hover {
+  color: #fff;
+}
+
 /* Three separate outcome cards */
 .pillars {
   max-width: 1080px;
