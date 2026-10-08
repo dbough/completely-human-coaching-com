@@ -50,29 +50,44 @@ section:not(#hero) h2 {
   margin: 0 auto;
   padding: 0 1.5rem;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.35fr 0.65fr;
   align-items: center;
   gap: 3rem;
 }
 
 .hero-text {
   align-self: start;
+  container-type: inline-size;
 }
 
 #hero h1 {
   color: #fff;
-  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  /* Scale with the text column so the longest rotating title always fits on one line */
+  font-size: min(3.8rem, 8.2cqw);
   line-height: 1.1;
   margin-bottom: 2.25rem;
 }
 
 #hero h1 .hl {
   display: inline-block;
+  white-space: nowrap;
   margin: 0.12em 0 0 -0.28em;
   padding: 0.02em 0.28em 0.08em;
   background-color: var(--cream);
   color: var(--bark);
   border-radius: 6px;
+}
+
+.hl-text {
+  display: inline-block;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hl-text.is-out {
+  opacity: 0;
+  transform: translateY(0.25em);
 }
 
 #hero .subhead {

@@ -16,7 +16,7 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
   <section id="hero">
     <div class="hero-container">
       <div class="hero-text">
-        <h1 class="reveal">Coaching for<br><span class="hl">Tech Managers</span></h1>
+        <h1 class="reveal" aria-label="Coaching for Tech Managers">Coaching for<br><span class="hl" aria-hidden="true"><span class="hl-text">Tech Managers</span></span></h1>
         <p class="subhead reveal reveal-delay-1">
           I help tech managers who are carrying too much.<br>
           I've been that manager.
@@ -248,6 +248,38 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       </form>
     </div>
   </section>
+
+  <script>
+    // Cycle through manager titles in the hero highlight, then stop on "Tech Managers".
+    (function () {
+      var text = document.querySelector('#hero .hl-text');
+      if (!text) { return; }
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+
+      var titles = ['Engineering Managers', 'IT Managers', 'DevOps Managers', 'Data Managers', 'AI / ML Managers', 'Tech Managers'];
+      var HOLD = 1300;
+      var FADE = 300;
+      var i = 0;
+
+      function next() {
+        i += 1;
+        text.classList.add('is-out');
+        setTimeout(function () {
+          text.textContent = titles[i];
+          text.classList.remove('is-out');
+          if (i < titles.length - 1) { setTimeout(next, HOLD); }
+        }, FADE);
+      }
+
+      // The page ships with "Tech Managers" for visitors without JS; start from the first title
+      // once the web fonts are in, so nothing reflows mid-animation.
+      var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+      fontsReady.then(function () {
+        text.textContent = titles[0];
+        setTimeout(next, HOLD);
+      });
+    })();
+  </script>
 
   <script>
     (function () {
