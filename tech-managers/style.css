@@ -630,6 +630,24 @@ section#offer h2 {
     gap: 2.5rem;
   }
 
+  /* Stacked layout: center the hero text over the photo */
+  .hero-text {
+    text-align: center;
+  }
+
+  #hero h1 .hl {
+    margin-left: 0;
+  }
+
+  #hero .subhead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
   .hero-photo {
     max-width: 260px;
   }
