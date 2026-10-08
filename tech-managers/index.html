@@ -277,9 +277,12 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       if (!text) { return; }
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
 
-      var titles = ['Engineering Managers', 'IT Managers', 'DevOps Managers', 'QA Managers', 'AI/ML Managers', 'Tech Managers'];
-      var HOLD = 750;
+      var titles = ['AI/ML Managers', 'DevOps Managers', 'QA Managers','IT Managers','Engineering Managers', 'Tech Managers'];
+      // How long each title stays up before the next one. Quick at first, then it eases off
+      // so "Engineering Managers" gets an extra beat before landing on "Tech Managers".
+      var HOLDS = [300, 300, 300, 450, 1100];
       var FADE = 200;
+      function hold(n) { return HOLDS[n] !== undefined ? HOLDS[n] : 300; }
       var i = 0;
 
       function next() {
@@ -288,7 +291,7 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
         setTimeout(function () {
           text.textContent = titles[i];
           text.classList.remove('is-out');
-          if (i < titles.length - 1) { setTimeout(next, HOLD); }
+          if (i < titles.length - 1) { setTimeout(next, hold(i)); }
         }, FADE);
       }
 
@@ -297,7 +300,7 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
       fontsReady.then(function () {
         text.textContent = titles[0];
-        setTimeout(next, HOLD);
+        setTimeout(next, hold(0));
       });
     })();
   </script>
