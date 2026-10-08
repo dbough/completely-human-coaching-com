@@ -50,9 +50,9 @@ section:not(#hero) h2 {
   margin: 0 auto;
   padding: 0 1.5rem;
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: 1.8fr 1fr;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-text {
@@ -64,7 +64,7 @@ section:not(#hero) h2 {
   color: #fff;
   font-size: clamp(2rem, 6vw, 3.8rem);
   /* Scale with the text column so the longest rotating title always fits on one line */
-  font-size: min(3.8rem, 8.2cqw);
+  font-size: min(3.8rem, 8.6cqw);
   line-height: 1.1;
   margin-bottom: 2.25rem;
 }
@@ -99,8 +99,8 @@ section:not(#hero) h2 {
 
 #hero .subhead {
   color: var(--sand);
-  font-size: 1.25rem;
-  max-width: 520px;
+  font-size: 1.4rem;
+  max-width: 560px;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -140,7 +140,7 @@ section:not(#hero) h2 {
   position: relative;
   justify-self: center;
   width: 100%;
-  max-width: 340px;
+  max-width: 400px;
 }
 
 .hero-photo-frame {
