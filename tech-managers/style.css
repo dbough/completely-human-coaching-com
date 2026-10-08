@@ -507,6 +507,16 @@ section#offer h2 {
   margin-bottom: 0;
 }
 
+.underline-accent {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ember);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+  text-decoration-skip-ink: none;
+}
+
 .pull-quote {
   margin: 2rem 0;
   font-family: 'Lora', serif;
