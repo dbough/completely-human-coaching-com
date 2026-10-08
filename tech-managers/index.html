@@ -273,7 +273,8 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
   <script>
     // Cycle through manager titles in the hero highlight, then stop on "Tech Managers".
     (function () {
-      var text = document.querySelector('#hero .hl-text');
+      var box = document.querySelector('#hero .hl');
+      var text = box && box.querySelector('.hl-text');
       if (!text) { return; }
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
 
@@ -281,18 +282,39 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       // How long each title stays up before the next one. Quick at first, then it eases off
       // so "Engineering Managers" gets an extra beat before landing on "Tech Managers".
       var HOLDS = [300, 300, 300, 450, 1100];
-      var FADE = 200;
+      var OUT = 150;
       function hold(n) { return HOLDS[n] !== undefined ? HOLDS[n] : 300; }
       var i = 0;
 
+      // Hidden twin of the title, used to measure each title's width in the real font so the
+      // box can ease to the new width instead of snapping.
+      var measurer = document.createElement('span');
+      measurer.className = 'hl-measure';
+      measurer.setAttribute('aria-hidden', 'true');
+      box.appendChild(measurer);
+
+      function widthOf(title) {
+        measurer.textContent = title;
+        return Math.ceil(measurer.getBoundingClientRect().width) + 1;
+      }
+
       function next() {
         i += 1;
-        text.classList.add('is-out');
+        text.classList.add('is-out');                      // old title slides up and fades
+        box.style.width = widthOf(titles[i]) + 'px';       // box eases to the new width
         setTimeout(function () {
           text.textContent = titles[i];
           text.classList.remove('is-out');
-          if (i < titles.length - 1) { setTimeout(next, hold(i)); }
-        }, FADE);
+          text.classList.add('is-below');                  // park the new title just below...
+          void text.offsetWidth;
+          text.classList.remove('is-below');               // ...and let it rise into place
+          if (i < titles.length - 1) {
+            setTimeout(next, hold(i));
+          } else {
+            // Landed on the last title: let the box size itself again so it follows resizes.
+            setTimeout(function () { box.classList.remove('is-rotating'); box.style.width = ''; }, 400);
+          }
+        }, OUT);
       }
 
       // The page ships with "Tech Managers" for visitors without JS; start from the first title
@@ -300,7 +322,14 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
       fontsReady.then(function () {
         text.textContent = titles[0];
+        box.style.width = widthOf(titles[0]) + 'px';
+        void box.offsetWidth;
+        box.classList.add('is-rotating');
         setTimeout(next, hold(0));
+      });
+
+      window.addEventListener('resize', function () {
+        if (box.classList.contains('is-rotating')) { box.style.width = widthOf(titles[i]) + 'px'; }
       });
     })();
   </script>
