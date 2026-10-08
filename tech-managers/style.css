@@ -86,39 +86,15 @@ section:not(#hero) h2 {
   border-radius: 6px;
 }
 
-#hero h1 .hl {
-  position: relative;
-}
-
-#hero h1 .hl.is-rotating {
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .hl-text {
   display: inline-block;
   white-space: nowrap;
-  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.2, 0.7, 0.3, 1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .hl-text.is-out {
   opacity: 0;
-  transform: translateY(-0.3em);
-  transition-duration: 0.15s;
-}
-
-.hl-text.is-below {
-  opacity: 0;
-  transform: translateY(0.3em);
-  transition: none;
-}
-
-.hl-measure {
-  position: absolute;
-  left: 0;
-  top: 0;
-  visibility: hidden;
-  white-space: nowrap;
-  pointer-events: none;
+  transform: translateY(0.25em);
 }
 
 #hero .subhead {
