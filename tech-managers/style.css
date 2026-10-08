@@ -145,16 +145,11 @@ section h2 {
   margin-top: 0.15rem;
 }
 
-.hero-photo-role {
+.hero-photo-namerow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  margin-top: 0.15rem;
-}
-
-.hero-photo-role .hero-photo-title {
-  margin-top: 0;
+  gap: 0.5rem;
 }
 
 .hero-linkedin {
