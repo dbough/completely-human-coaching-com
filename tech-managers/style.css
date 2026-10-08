@@ -4,19 +4,19 @@
 .section-label {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  gap: 0.9rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--bark);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.25rem;
 }
 
 .section-label::before {
   content: "";
-  width: 28px;
-  height: 4px;
-  border-radius: 2px;
+  width: 40px;
+  height: 5px;
+  border-radius: 3px;
   background: var(--ember);
   flex-shrink: 0;
 }
@@ -371,7 +371,7 @@ section h2 {
 }
 
 #offer .section-label {
-  color: var(--sand);
+  color: #fff;
 }
 
 #offer h2 {
@@ -613,6 +613,10 @@ section h2 {
 }
 
 @media (max-width: 520px) {
+  .section-label {
+    font-size: 1.1rem;
+  }
+
   #hero {
     padding: 3.5rem 0 3rem;
   }
