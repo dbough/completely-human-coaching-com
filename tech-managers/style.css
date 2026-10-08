@@ -89,7 +89,7 @@ section:not(#hero) h2 {
 .hl-text {
   display: inline-block;
   white-space: nowrap;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .hl-text.is-out {
