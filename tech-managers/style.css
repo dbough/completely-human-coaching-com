@@ -69,6 +69,12 @@ section:not(#hero) h2 {
   margin-bottom: 2.25rem;
 }
 
+#hero h1 .h1-top {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.05;
+}
+
 #hero h1 .hl {
   display: inline-block;
   white-space: nowrap;
