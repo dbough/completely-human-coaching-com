@@ -1,29 +1,37 @@
 /* ============================================
-   SECTION LABELS (bigger than the shared default)
+   SECTION TITLES
+   .section-label is the big section title; the h2 under it is a
+   lighter supporting line.
 ============================================ */
 .section-label {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--bark);
-  margin-bottom: 1.25rem;
+  display: block;
+  font-family: 'Lora', serif;
+  font-size: clamp(2.1rem, 5.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
 }
 
-.section-label::before {
+.section-label::after {
   content: "";
-  width: 40px;
+  display: block;
+  width: 64px;
   height: 5px;
+  margin-top: 0.7rem;
   border-radius: 3px;
   background: var(--ember);
-  flex-shrink: 0;
 }
 
-section h2 {
-  color: var(--ink);
-  margin-bottom: 1.5rem;
+section:not(#hero) h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--soil);
+  margin-bottom: 1.75rem;
 }
 
 /* ============================================
@@ -374,8 +382,8 @@ section h2 {
   color: #fff;
 }
 
-#offer h2 {
-  color: #fff;
+section#offer h2 {
+  color: var(--sand);
 }
 
 .offering-card {
@@ -613,10 +621,6 @@ section h2 {
 }
 
 @media (max-width: 520px) {
-  .section-label {
-    font-size: 1.1rem;
-  }
-
   #hero {
     padding: 3.5rem 0 3rem;
   }
