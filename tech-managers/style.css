@@ -195,6 +195,12 @@ section h2 {
   background: rgba(255, 255, 255, 0.11);
 }
 
+.pillar-icon {
+  display: block;
+  color: var(--sand);
+  margin-bottom: 0.9rem;
+}
+
 #hero .pillar h2 {
   color: #fff;
   font-size: 1.45rem;
