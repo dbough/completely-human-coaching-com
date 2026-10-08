@@ -22,7 +22,7 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
           I've been that manager.
         </p>
         <div class="hero-actions reveal reveal-delay-2">
-          <a class="cta-button cta-light" href="#offer">See the program and price &darr;</a>
+          <a class="cta-button cta-light" href="#offer">See the offering and price &darr;</a>
         </div>
       </div>
       <div class="hero-photo reveal reveal-delay-1">
@@ -178,15 +178,19 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
   <section id="offer">
     <div class="container">
       <p class="section-label reveal">The offer</p>
-      <h2 class="reveal reveal-delay-1">Six sessions over 10 to 12 weeks.</h2>
+      <!-- <h2 class="reveal reveal-delay-1">Six sessions over 12 weeks.</h2> -->
 
       <div class="offering-card reveal reveal-delay-2">
-        <p class="offering-meta">6 sessions &middot; 45 minutes each &middot; 10 to 12 weeks</p>
+        <ul class="offering-facts">
+          <li>6 sessions</li>
+          <li>45 minutes each</li>
+          <li>12 weeks</li>
+        </ul>
         <p class="offering-name">Tech Manager Coaching</p>
         <div class="price-display">
           <span class="price-retail"><span class="sr-only">Regular price</span><s>${{ site.data.pricing.tech_managers.retail }}</s></span>
           <span class="price-current">${{ site.data.pricing.tech_managers.price }}</span>
-          <span class="price-label">Half price, founding client rate</span>
+          <span class="price-label">Half price, early adopter rate</span>
         </div>
         <p class="offering-per-session">About ${{ site.data.pricing.tech_managers.price_per_session }} per session</p>
 

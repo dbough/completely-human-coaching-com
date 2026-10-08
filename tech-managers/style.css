@@ -419,13 +419,21 @@ section#offer h2 {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
 }
 
-.offering-meta {
-  font-size: 0.8rem;
+.offering-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.offering-facts li {
+  background: var(--bark);
+  color: #fff;
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--clay);
-  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
 }
 
 .offering-name {
