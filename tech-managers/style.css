@@ -54,6 +54,15 @@ section h2 {
   margin-bottom: 1.25rem;
 }
 
+#hero h1 .hl {
+  display: inline-block;
+  margin: 0.12em 0 0 -0.28em;
+  padding: 0.02em 0.28em 0.08em;
+  background-color: var(--cream);
+  color: var(--bark);
+  border-radius: 6px;
+}
+
 #hero .subhead {
   color: var(--sand);
   font-size: 1.25rem;
