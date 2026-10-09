@@ -765,3 +765,10 @@ section#offer h2 {
     transform: none;
   }
 }
+
+/* ============================================
+   FOOTER (this page only: navy to match the page's dark sections)
+============================================ */
+footer {
+  background-color: var(--bark);
+}
