@@ -188,6 +188,18 @@ section:not(#hero) h2 {
   margin-top: 0.15rem;
 }
 
+.hero-credential {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--sand);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero-credential:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
 .hero-photo-namerow {
   display: flex;
   align-items: center;
@@ -329,8 +341,9 @@ section:not(#hero) h2 {
   padding-top: 2rem;
   border-top: 1px solid var(--sand);
   font-family: 'Lora', serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-style: italic;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.35;
   color: var(--bark);
 }
 
@@ -410,55 +423,76 @@ section#offer h2 {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
 }
 
-.offering-facts {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 1.5rem;
-  padding: 0.9rem 0;
-  border-top: 3px solid var(--bark);
-  border-bottom: 1px solid var(--sand);
-}
-
-.offering-facts li {
-  text-align: center;
-  padding: 0 0.5rem;
-}
-
-.offering-facts li + li {
-  border-left: 1px solid var(--sand);
-}
-
-.fact-num {
-  display: block;
-  font-family: 'Lora', serif;
-  font-size: 2.6rem;
-  font-weight: 600;
-  line-height: 1.1;
-  color: var(--bark);
-}
-
-.fact-label {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--soil);
-}
-
 .offering-name {
   font-family: 'Lora', serif;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
   color: var(--ink);
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
 }
 
 .offering-card .price-current {
-  font-size: 2.2rem;
+  font-size: 3.2rem;
 }
 
 .offering-card .price-retail {
-  font-size: 1.15rem;
+  font-size: 1.6rem;
+}
+
+.offering-card .price-display {
+  justify-content: center;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.offering-card .price-label {
+  font-size: 1rem;
+  text-decoration: underline;
+  text-decoration-color: var(--ember);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.3em;
+}
+
+.offering-card .price-limit {
+  width: fit-content;
+  max-width: 100%;
+  margin: -0.25rem auto 1.75rem;
+  padding: 0.55rem 1.1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  background: var(--ember);
+  border-radius: 999px;
+}
+
+.offering-duration {
+  margin: 0 0 1.75rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  background: color-mix(in srgb, var(--sand) 40%, transparent);
+  border-top: 3px solid var(--ember);
+  border-radius: 4px;
+}
+
+.offering-duration strong {
+  display: block;
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.offering-duration-tagline {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  text-wrap: balance;
+  color: var(--soil);
 }
 
 .offering-per-session {
@@ -474,6 +508,17 @@ section#offer h2 {
   color: var(--muted);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  text-decoration: underline;
+  text-decoration-color: var(--ember);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.4em;
+  text-decoration-skip-ink: none;
+}
+
+.offering-audience-lead {
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .offer-note {
@@ -692,14 +737,6 @@ section#offer h2 {
 }
 
 @media (max-width: 520px) {
-  .fact-num {
-    font-size: 2.1rem;
-  }
-
-  .fact-label {
-    font-size: 0.82rem;
-  }
-
   #hero {
     padding: 3.5rem 0 3rem;
   }
@@ -728,4 +765,19 @@ section#offer h2 {
   .pillar:hover {
     transform: none;
   }
+}
+
+/* ============================================
+   FOOTER (this page only: navy to match the page's dark sections)
+============================================ */
+footer {
+  background-color: var(--bark);
+}
+
+/* ============================================
+   HEADER (this page only: navy site name to match the page palette)
+============================================ */
+.site-name {
+  color: var(--bark);
+  cursor: pointer;
 }
