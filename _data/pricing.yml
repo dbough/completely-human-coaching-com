@@ -17,6 +17,6 @@ workshop:
   retail: "1500"
   price: "500"
 tech_managers:
-  retail: "1,000"
+  retail: "1,500"
   price: "500"
   price_per_session: "83"
