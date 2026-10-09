@@ -772,3 +772,11 @@ section#offer h2 {
 footer {
   background-color: var(--bark);
 }
+
+/* ============================================
+   HEADER (this page only: navy site name to match the page palette)
+============================================ */
+.site-name {
+  color: var(--bark);
+  cursor: pointer;
+}

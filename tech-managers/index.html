@@ -353,3 +353,18 @@ og_image: "https://completelyhumancoaching.com/og-image.png"
       });
     })();
   </script>
+
+  <script>
+    // Header logo/name scrolls to the top of this page (this page only).
+    (function () {
+      var name = document.querySelector('header .site-name');
+      if (!name) { return; }
+      function toTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      name.setAttribute('role', 'link');
+      name.setAttribute('tabindex', '0');
+      name.addEventListener('click', toTop);
+      name.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { toTop(); }
+      });
+    })();
+  </script>
