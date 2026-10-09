@@ -497,6 +497,12 @@ section#offer h2 {
   margin-bottom: 0.75rem;
 }
 
+.offering-audience-lead {
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .offer-note {
   margin-top: 1.5rem;
   font-size: 0.95rem;
